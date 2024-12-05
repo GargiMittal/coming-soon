@@ -11,7 +11,7 @@
             padding:0;
             background-color: black;
             position: relative;
-            font-family: "Monsterrat","Raleway",sans-serif;
+            font-family: "Monsterrat","Raleway","Open Sans",sans-serif;
         }
         header{
             position: fixed;
@@ -20,6 +20,7 @@
             display: flex;
             justify-content: space-between;
             z-index: 10;
+            padding:10px;
         }
         .logo{
             width:150px;
@@ -53,9 +54,9 @@
         h1{
             white-space: nowrap;
             color:white;
-            font-weight:100;
+            font-weight:300;
             font-size: 3rem;
-            font-family: "Raleway";
+            font-family: "Open Sans";
         }
         .coming-soon {
     position: absolute; /* Changed from absolute to relative */
@@ -69,7 +70,8 @@
 
 .coming-soon h1 {
     font-size: 5rem;
-    font-weight: 300;
+    font-weight: 500;
+    letter-spacing: 10px;
     opacity: 0;
 }
 
@@ -114,48 +116,94 @@
 }
 
 @media (max-width: 468px) {
+    /* Global Reset */
     body {
         margin: 0;
         padding: 0;
         overflow: hidden; /* Prevent scrolling */
+        font-family: Arial, sans-serif; /* Use a clean, legible font */
     }
 
-    .myVideo, #myVideo {
+    header {
+        position: fixed;
+        top: 0;
         width: 100%;
-        height: 100vh; /* Ensure video fits the viewport */
-        object-fit: cover; /* Ensure video maintains aspect ratio */
-        overflow: hidden;
+        display: flex;
+        justify-content: space-between; /* Keep items horizontally aligned */
+        align-items: center; /* Center vertically */
+        padding: 5px 10px; /* Reduce padding for smaller screens */
+        z-index: 10;
     }
 
+    .logo {
+        width: 100px; /* Reduce logo size */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .logo img {
+        width: 100%; /* Make the logo responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    nav {
+        margin-top: 0; /* Remove unnecessary margin */
+        position: static; /* Remove absolute positioning */
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
+        margin: 0 5px; /* Add spacing between links */
+    }
+    /* Full-Screen Video Background */
+    .myVideo, #myVideo {
+        position: fixed; /* Fix the video to the viewport */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Fill the viewport height */
+        object-fit: cover; /* Maintain aspect ratio while covering viewport */
+        z-index: -1; /* Place video behind all content */
+    }
+
+    /* Centered Content */
     .content {
         position: absolute;
         left: 50%;
-        bottom: 30%; /* Adjust positioning to avoid clipping */
-        transform: translate(-50%, -70%); /* Center horizontally */
+        bottom: 25%; /* Adjust for better placement on small screens */
+        transform: translate(-50%, -50%); /* Center horizontally and adjust vertically */
         text-align: center;
-        padding: 0 10px; /* Add some padding for smaller screens */
+        padding: 0 10px; /* Add padding for better layout on smaller screens */
+        color: #fff; /* Ensure text visibility on video background */
     }
 
+    /* Heading Styles */
     .content h1 {
-        font-size: 2rem; /* Reduce font size for smaller screens */
-        line-height: 1.5; /* Improve readability */
+        font-size: 1.6rem; /* Adjust font size for readability */
+        line-height: 1.3; /* Enhance readability */
+        margin: 0;
         word-break: break-word; /* Prevent overflow of long words */
     }
 
+    /* Coming Soon Section */
     .coming-soon h1 {
-        font-size: 2.5rem; /* Adjust for smaller screens */
-        margin-top: 20px;
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        margin-top: 10px; /* Adjust margin for cleaner spacing */
     }
 
+    /* Social Icons */
     .socials {
-        margin-top: 10px;
+        margin-top: 15px; /* Space below the content */
     }
 
     .socials a svg {
-        width: 20px;
-        height: 20px; /* Scale social icons for smaller screens */
+        width: 18px; /* Scale icons for smaller screens */
+        height: 18px;
+        fill: #fff; /* Ensure icons are visible */
     }
 }
+
 
     </style>
 </head>
