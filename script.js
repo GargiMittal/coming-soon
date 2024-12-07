@@ -97,4 +97,24 @@ t1.to("body", {
     duration: 1, 
     ease: "power2.out"
   });
+  // Select the link
+const galleryLink = document.getElementById('galleryLink');
+
+// Create an audio object for the click sound
+const clickSound = new Audio('clicksound2.mp3');
+
+// Add an event listener to play the sound on link click
+galleryLink.addEventListener('click', (event) => {
+  clickSound.play();
+  
+  // Optional: Add a small delay before navigating
+  // Prevent default action temporarily
+  event.preventDefault();
+
+  // Navigate to the link after the sound plays
+  setTimeout(() => {
+    window.location.href = galleryLink.href;
+  }, 200); // Delay matches the length of your sound
+});
+
   
