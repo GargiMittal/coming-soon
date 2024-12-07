@@ -12,7 +12,13 @@
             background-color: black;
             position: relative;
             font-family: "Michroma","Raleway","Open Sans",sans-serif;
+             /* overflow-y: scroll; 
+             overflow: hidden;
+             scrollbar-width: none; */
         }
+        body::-webkit-scrollbar {
+            display: none;
+         }
         header {
     position: fixed;
     top: 0;
@@ -201,7 +207,7 @@ nav a {
 
     /* Coming Soon Section */
     .coming-soon h1 {
-        font-size: 2rem; 
+        font-size: 1.2rem; 
         margin-top: 10px;
     }
 
@@ -215,18 +221,29 @@ nav a {
         height: 18px;
         fill: #fff; 
     }
+    a:hover {
+      background-color: #007BFF;
+      color: white;
+    }
 }
 
 
     </style>
 </head>
+<audio autoplay loop style="display: none;">
+    <source src="background_music.mp3" type="audio/mpeg">
+
+ </audio>
+
 <body>
     <header>
         <div class="logo">
             <img src="main logo(without theme).png" alt="">
         </div>
         <nav>
-            <a href="">Gallery</a>
+           <!-- <a href="">Gallery</a>  -->
+           <a href="" id="galleryLink" target="_blank"> Gallery</a>
+           
         </nav>
     </header>
     <div class="myVideo">
